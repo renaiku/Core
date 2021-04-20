@@ -1,7 +1,7 @@
 {
-	"name": "survivalv",
-	"version": "0.0.1",
-	"description": "Survival V - FiveM server",
+	"name": "tcs",
+	"version": "0.1.0",
+	"description": "TCS - Core",
 	"main": "index.js",
 	"scripts": {
 		"start": "clean && tsc",

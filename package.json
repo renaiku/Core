@@ -1,0 +1,25 @@
+{
+	"name": "survivalv",
+	"version": "0.0.1",
+	"description": "Survival V - FiveM server",
+	"main": "index.js",
+	"scripts": {
+		"start": "clean && tsc",
+		"doc": "npx compodoc -p ./tsconfig.json -n \"TCS\" -d ./docs --theme laravel",
+		"test": "echo \"Error: no test specified\" && exit 1 && copy"
+	},
+	"keywords": [
+		"fivem",
+		"gta"
+	],
+	"author": "Maxence Leguede",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"@citizenfx/client": "^2.0.3825-1",
+		"@citizenfx/server": "^2.0.3825-1",
+		"prettier": "^2.2.1",
+		"tslint": "^6.1.3",
+		"typescript": "^4.2.4"
+	}
+}

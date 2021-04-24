@@ -59,6 +59,18 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#loadTcsModuleInfos" title="src/mixed_main.ts"><b>loadTcsModuleInfos</b>&nbsp;&nbsp;&nbsp;(src/.../mixed_main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadTcsModuleInfosFunction" title="src/mixed_main.ts"><b>loadTcsModuleInfosFunction</b>&nbsp;&nbsp;&nbsp;(src/.../mixed_main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#onTcsLoaded" title="src/mixed_main.ts"><b>onTcsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../mixed_main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#onTcsLoadedFunctions" title="src/mixed_main.ts"><b>onTcsLoadedFunctions</b>&nbsp;&nbsp;&nbsp;(src/.../mixed_main.ts)</a>
+                        </li>
+                        <li>
                             <a href="#TCS" title="src/mixed_main.ts"><b>TCS</b>&nbsp;&nbsp;&nbsp;(src/.../mixed_main.ts)</a>
                         </li>
                         <li>
@@ -74,6 +86,114 @@
     <h3>src/mixed_main.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadTcsModuleInfos"></a>
+                        <span class="name">
+                            <b>
+                            loadTcsModuleInfos</b>
+                            <a href="#loadTcsModuleInfos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(fnc: Function) &#x3D;&gt; {
+	if (TCS !&#x3D; null) {
+		fnc();
+		return;
+	}
+	loadTcsModuleInfosFunction.push(fnc);
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadTcsModuleInfosFunction"></a>
+                        <span class="name">
+                            <b>
+                            loadTcsModuleInfosFunction</b>
+                            <a href="#loadTcsModuleInfosFunction"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Function[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onTcsLoaded"></a>
+                        <span class="name">
+                            <b>
+                            onTcsLoaded</b>
+                            <a href="#onTcsLoaded"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(fnc: Function) &#x3D;&gt; {
+	if (TCS !&#x3D; null) {
+		fnc();
+		return;
+	}
+	onTcsLoadedFunctions.push(fnc);
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onTcsLoadedFunctions"></a>
+                        <span class="name">
+                            <b>
+                            onTcsLoadedFunctions</b>
+                            <a href="#onTcsLoadedFunctions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Function[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
@@ -124,6 +244,10 @@
 	debugMode: true, // If set to true, debug informations are going to be printed in the console
 
 	maxExecTimePerThread: 10, // Maximum amount of time (in ms) a thread should take to execute in a tick
+
+	showErrorsAnyCase: true, // Should print errors in console even if debug mode isn&#x27;t activated ?
+
+	showWarningsAnyCase: true, // Should print warnings in console even if debug mode isn&#x27;t activated ?
 }</code>
                         </td>
                     </tr>

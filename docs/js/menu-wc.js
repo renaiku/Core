@@ -98,6 +98,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/TcsEvent.html" data-type="entity-link">TcsEvent</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/TcsModuleInfos.html" data-type="entity-link">TcsModuleInfos</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/TcsThreadExec.html" data-type="entity-link">TcsThreadExec</a>
                             </li>
                         </ul>

@@ -169,7 +169,7 @@ Should only be called by the core !</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/core/librairies/modules/mixed_modulesManager.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/core/librairies/modules/mixed_modulesManager.ts:66</a></div>
                             </td>
                         </tr>
 
@@ -347,8 +347,8 @@ Should only be called by the core !</p>
 							const foundModule &#x3D; this.findModuleById(mod);
 
 							if (!foundModule) {
-								TCS.debug(
-									&#x60;${ConsoleColors.RED}Can&#x27;t start module ${
+								TCS.error(
+									&#x60;Can&#x27;t start module ${
 										ConsoleColors.YELLOW + module.getId() + ConsoleColors.RED
 									} because dependency ${
 										ConsoleColors.YELLOW + mod + ConsoleColors.RED
@@ -375,10 +375,8 @@ Should only be called by the core !</p>
 		if (!this.findModuleById(newModule.getId()))
 			this.gameModules.push(newModule);
 		else
-			TCS.debug(
-				&#x60;${ConsoleColors.RED} ERROR : Can&#x27;t add module ${
-					ConsoleColors.YELLOW
-				}${newModule.getId()}${
+			TCS.error(
+				&#x60;Can&#x27;t add module ${ConsoleColors.YELLOW}${newModule.getId()}${
 					ConsoleColors.RED
 				} because a module with the same id already exists !&#x60;,
 			);

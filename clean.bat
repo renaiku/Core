@@ -1,6 +1,10 @@
 @echo off
 
 echo "Cleaning build..."
-cd build/
+if exist build\src\ (
+cd build/src
 del /S /Q "./"
-cd ..
+cd ../..
+) else (
+	echo "Doesn't exist"
+)

@@ -31,8 +31,8 @@ class TcsThread {
 					if (TCS_CONFIG.debugMode) this.debugExec(thread);
 					else thread.exec();
 				} catch (e) {
-					TCS.debug(
-						`${ConsoleColors.YELLOW} [${thread.id}] ${ConsoleColors.RED}Error encountered in thread : \n${e}`,
+					TCS.error(
+						`Error encountered in thread ${ConsoleColors.YELLOW}${thread.id}${ConsoleColors.RED}: \n${e}`,
 					);
 				}
 			});
@@ -60,10 +60,8 @@ class TcsThread {
 		const time = benchmark.stop();
 
 		if (time >= 1) {
-			TCS.debug(
-				`${ConsoleColors.YELLOW}[${thread.id.split('-')[1]}] WARNING : ${
-					ConsoleColors.RED
-				}Took ${time} ms to execute !`,
+			TCS.warning(
+				`Thread ${thread.id.split('-')[1]} took ${time} ms to execute !`,
 			);
 		}
 	};

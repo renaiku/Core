@@ -107,6 +107,12 @@
                             <li>
                                 <a href="#get">get</a>
                             </li>
+                            <li>
+                                <a href="#getAndReplace">getAndReplace</a>
+                            </li>
+                            <li>
+                                <a href="#loadModuleLang">loadModuleLang</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -206,8 +212,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/core/librairies/language/mixed_languageManager.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/core/librairies/language/mixed_languageManager.ts:98</a></div>
                 </td>
             </tr>
 
@@ -339,6 +345,199 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAndReplace"></a>
+                    <span class="name">
+                        <b>
+                            getAndReplace
+                        </b>
+                        <a href="#getAndReplace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAndReplace(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, replace: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/core/librairies/language/mixed_languageManager.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the translation of the specified key and fill it with values</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Translation to find</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>replace</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Map of key and their values to find and replace in the translation</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Translation in the specified language in the configuration, filled with specified values</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadModuleLang"></a>
+                    <span class="name">
+                        <b>
+                            loadModuleLang
+                        </b>
+                        <a href="#loadModuleLang"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadModuleLang(module: <a href="../classes/TcsModule.html">TcsModule</a>, language: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/core/librairies/language/mixed_languageManager.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the translations of the specified module and add it to the dictionnary</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>module</td>
+                                    <td>
+                                                <code><a href="../classes/TcsModule.html" target="_self" >TcsModule</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Module informations to load the lang config from</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>language</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;en-EN&#x27;</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Name of the current language to load</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 
@@ -373,13 +572,67 @@
 	get(key: string): String {
 		//@ts-ignore
 		if (!this.lang[key]) {
-			TCS.debug(
-				&#x60;${ConsoleColors.RED}${key} is not defined for config ${TCS_CONFIG.lang}.&#x60;,
-			);
+			TCS.error(&#x60;${key} is not defined for config ${TCS_CONFIG.lang}.&#x60;);
 		}
 
 		//@ts-ignore
 		return this.lang[key] || &#x27;&#x27;;
+	}
+
+	/**
+	 * Get the translation of the specified key and fill it with values
+	 * @param key Translation to find
+	 * @param replace Map of key and their values to find and replace in the translation
+	 * @returns Translation in the specified language in the configuration, filled with specified values
+	 */
+	getAndReplace(key: string, replace: Object): string {
+		//@ts-ignore
+		if (!this.lang[key]) {
+			TCS.error(&#x60;${key} is not defined for config ${TCS_CONFIG.lang}.&#x60;);
+		}
+
+		//@ts-ignore
+		let result &#x3D; this.lang[key] || &#x27;&#x27;;
+
+		for (let objKey in replace) {
+			//@ts-ignore
+			const replaceTo &#x3D; replace[objKey];
+			result &#x3D; result.replace(&#x60;{${objKey}}&#x60;, replaceTo);
+		}
+
+		return result;
+	}
+
+	/**
+	 * Get the translations of the specified module and add it to the dictionnary
+	 * @param module Module informations to load the lang config from
+	 * @param language Name of the current language to load
+	 */
+	loadModuleLang(module: TcsModule, language: String &#x3D; &#x27;en-EN&#x27;) {
+		const id &#x3D; module.getId();
+
+		const dict &#x3D; JSON.parse(
+			LoadResourceFile(
+				GetCurrentResourceName(),
+				&#x60;src/assets/lang/${id}/${language}.json&#x60;,
+			),
+		);
+
+		if (!dict) {
+			if (language !&#x3D;&#x3D; &#x27;en-EN&#x27;) {
+				TCS.warning(
+					&#x60;${language} language file doesn&#x27;t exist for module ${id}. Trying to load language &#x27;en-EN&#x27;...&#x60;,
+				);
+				this.loadModuleLang(module);
+			} else {
+				TCS.warning(
+					&#x60;${language} language file doesn&#x27;t exist for module ${id}.&#x60;,
+				);
+			}
+			return;
+		}
+
+		this.addConfig(dict);
 	}
 
 	/**

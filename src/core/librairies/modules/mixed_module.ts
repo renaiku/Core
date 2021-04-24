@@ -1,13 +1,12 @@
 /**
  * @author Maxence Leguede
- * @version 0.1.0
+ * @version 1.0.0
  * @since 0.1.0
  */
 
 class TcsModule {
-	private moduleType: TcsModuleTypes;
-	private moduleName: String;
-	private moduleDependencies: Array<String>;
+	//@ts-ignore
+	private moduleInfos: TcsModuleInfos;
 	private launchMethod: Function;
 	private destroyMethod: Function;
 
@@ -21,20 +20,17 @@ class TcsModule {
 	 * @param launchMethod Method to launch when the module is ready
 	 * @param moduleDependencies List of modules ids this module depends on
 	 */
-	constructor(
-		moduleType: TcsModuleTypes,
-		moduleName: String,
-		launchMethod: Function,
-		moduleDependencies: Array<String> = [],
-	) {
-		this.moduleType = moduleType;
-		this.moduleName = moduleName;
+	constructor(moduleInfos: TcsModuleInfos | null, launchMethod: Function) {
+		this.shouldLaunch = true;
+
+		if (moduleInfos != null) {
+			this.moduleInfos = moduleInfos;
+		} else {
+			this.shouldLaunch = false;
+		}
 		this.launchMethod = launchMethod;
 		this.destroyMethod = () => {};
 		this.moduleLaunched = false;
-		this.shouldLaunch = true;
-
-		this.moduleDependencies = moduleDependencies;
 	}
 
 	/**
@@ -42,7 +38,7 @@ class TcsModule {
 	 * @returns id of the current module
 	 */
 	getId(): String {
-		return `${this.moduleType}/${this.moduleName}`;
+		return `${this.moduleInfos.moduleType}/${this.moduleInfos.moduleName}`;
 	}
 
 	/**
@@ -50,7 +46,7 @@ class TcsModule {
 	 * @returns list of current module dependencies
 	 */
 	getDependencies(): Array<String> {
-		return this.moduleDependencies;
+		return this.moduleInfos.dependencies || [];
 	}
 
 	/**
@@ -92,6 +88,7 @@ class TcsModule {
 		this.printDebug('Starting module !');
 		try {
 			this.launchMethod(this);
+			TCS.lang.loadModuleLang(this, TCS_CONFIG.lang);
 			this.moduleLaunched = true;
 			this.printDebug('Module has been started !', ConsoleColors.GREEN);
 		} catch (e) {

@@ -5,17 +5,16 @@
  */
 
 class TcsCore {
-	eventManager: TcsEventManager;
-	modules: TcsModuleManager;
-	lang: TcsLanguageManager;
-	threads: TcsThreadsManager;
-	isServerSided: boolean;
+	readonly eventManager: TcsEventManager;
+	readonly modules: TcsModuleManager;
+	readonly lang: TcsLanguageManager;
+	readonly threads: TcsThreadsManager;
+	readonly isServerSided: boolean;
 
 	/**
 	 * Initialize the TCS core
 	 */
 	constructor() {
-		ExecuteCommand('clear ');
 		console.log(
 			`${ConsoleColors.BLUE}[TCS] ${ConsoleColors.YELLOW}Initializing...`,
 		);
@@ -38,12 +37,35 @@ class TcsCore {
 
 	/**
 	 * Display the specified message if the server is in debug mode
-	 * @param message Message to draw in the console
+	 * @param message Message to print in the console
 	 */
 	debug(message: String) {
 		if (TCS_CONFIG.debugMode) {
 			console.log(
-				`${ConsoleColors.YELLOW}[debug] ${message}`,
+				`${ConsoleColors.BLUE}[debug] ${message}`,
+				ConsoleColors.RESET,
+			);
+		}
+	}
+
+	/**
+	 * Display the specified error in the console
+	 * @param error Error to print in the console
+	 */
+	error(error: String) {
+		if (TCS_CONFIG.showErrorsAnyCase || TCS_CONFIG.debugMode) {
+			console.log(`${ConsoleColors.RED}[ERROR] ${error}`, ConsoleColors.RESET);
+		}
+	}
+
+	/**
+	 * Display the specified warning in the console
+	 * @param warning Warning to print in the console
+	 */
+	warning(warning: String) {
+		if (TCS_CONFIG.showWarningsAnyCase || TCS_CONFIG.debugMode) {
+			console.log(
+				`${ConsoleColors.YELLOW}[WARNING] ${warning}`,
 				ConsoleColors.RESET,
 			);
 		}

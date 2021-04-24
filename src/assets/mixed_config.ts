@@ -10,4 +10,10 @@ var TCS_CONFIG = {
 	debugMode: true, // If set to true, debug informations are going to be printed in the console
 
 	maxExecTimePerThread: 10, // Maximum amount of time (in ms) a thread should take to execute in a tick
+
+	showErrorsAnyCase: true, // Should print errors in console even if debug mode isn't activated ?
+
+	showWarningsAnyCase: true, // Should print warnings in console even if debug mode isn't activated ?
+
+	versionningCheck: true, // Check if modules are at their latest version
 };

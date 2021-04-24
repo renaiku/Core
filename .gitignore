@@ -1,3 +1,4 @@
 node_modules/
 copyToSources.bat
 package-lock.json
+**/*.d.ts

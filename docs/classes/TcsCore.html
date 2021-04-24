@@ -86,18 +86,23 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#eventManager">eventManager</a>
                             </li>
                             <li>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#isServerSided">isServerSided</a>
                             </li>
                             <li>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#lang">lang</a>
                             </li>
                             <li>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#modules">modules</a>
                             </li>
                             <li>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#threads">threads</a>
                             </li>
                         </ul>
@@ -114,6 +119,12 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#debug">debug</a>
+                            </li>
+                            <li>
+                                <a href="#error">error</a>
+                            </li>
+                            <li>
+                                <a href="#warning">warning</a>
                             </li>
                         </ul>
                     </td>
@@ -164,6 +175,7 @@
                         <a name="eventManager"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Readonly</span>
                             eventManager</b>
                             <a href="#eventManager"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -191,6 +203,7 @@
                         <a name="isServerSided"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Readonly</span>
                             isServerSided</b>
                             <a href="#isServerSided"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -218,6 +231,7 @@
                         <a name="lang"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Readonly</span>
                             lang</b>
                             <a href="#lang"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -245,6 +259,7 @@
                         <a name="modules"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Readonly</span>
                             modules</b>
                             <a href="#modules"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -272,6 +287,7 @@
                         <a name="threads"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Readonly</span>
                             threads</b>
                             <a href="#threads"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -321,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/core/mixed_tcs.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/core/mixed_tcs.ts:42</a></div>
                 </td>
             </tr>
 
@@ -356,7 +372,161 @@
 
 
                                     <td>
-                                        <p>Message to draw in the console</p>
+                                        <p>Message to print in the console</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                        <b>
+                            error
+                        </b>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>error(error: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/core/mixed_tcs.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Display the specified error in the console</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>error</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Error to print in the console</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="warning"></a>
+                    <span class="name">
+                        <b>
+                            warning
+                        </b>
+                        <a href="#warning"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>warning(warning: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/core/mixed_tcs.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Display the specified warning in the console</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>warning</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Warning to print in the console</p>
 
                                     </td>
                                 </tr>
@@ -387,17 +557,16 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">class TcsCore {
-	eventManager: TcsEventManager;
-	modules: TcsModuleManager;
-	lang: TcsLanguageManager;
-	threads: TcsThreadsManager;
-	isServerSided: boolean;
+	readonly eventManager: TcsEventManager;
+	readonly modules: TcsModuleManager;
+	readonly lang: TcsLanguageManager;
+	readonly threads: TcsThreadsManager;
+	readonly isServerSided: boolean;
 
 	/**
 	 * Initialize the TCS core
 	 */
 	constructor() {
-		ExecuteCommand(&#x27;clear &#x27;);
 		console.log(
 			&#x60;${ConsoleColors.BLUE}[TCS] ${ConsoleColors.YELLOW}Initializing...&#x60;,
 		);
@@ -420,12 +589,35 @@
 
 	/**
 	 * Display the specified message if the server is in debug mode
-	 * @param message Message to draw in the console
+	 * @param message Message to print in the console
 	 */
 	debug(message: String) {
 		if (TCS_CONFIG.debugMode) {
 			console.log(
-				&#x60;${ConsoleColors.YELLOW}[debug] ${message}&#x60;,
+				&#x60;${ConsoleColors.BLUE}[debug] ${message}&#x60;,
+				ConsoleColors.RESET,
+			);
+		}
+	}
+
+	/**
+	 * Display the specified error in the console
+	 * @param error Error to print in the console
+	 */
+	error(error: String) {
+		if (TCS_CONFIG.showErrorsAnyCase || TCS_CONFIG.debugMode) {
+			console.log(&#x60;${ConsoleColors.RED}[ERROR] ${error}&#x60;, ConsoleColors.RESET);
+		}
+	}
+
+	/**
+	 * Display the specified warning in the console
+	 * @param warning Warning to print in the console
+	 */
+	warning(warning: String) {
+		if (TCS_CONFIG.showWarningsAnyCase || TCS_CONFIG.debugMode) {
+			console.log(
+				&#x60;${ConsoleColors.YELLOW}[WARNING] ${warning}&#x60;,
 				ConsoleColors.RESET,
 			);
 		}

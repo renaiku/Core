@@ -23,8 +23,8 @@ class TcsModuleManager {
 							const foundModule = this.findModuleById(mod);
 
 							if (!foundModule) {
-								TCS.debug(
-									`${ConsoleColors.RED}Can't start module ${
+								TCS.error(
+									`Can't start module ${
 										ConsoleColors.YELLOW + module.getId() + ConsoleColors.RED
 									} because dependency ${
 										ConsoleColors.YELLOW + mod + ConsoleColors.RED
@@ -51,10 +51,8 @@ class TcsModuleManager {
 		if (!this.findModuleById(newModule.getId()))
 			this.gameModules.push(newModule);
 		else
-			TCS.debug(
-				`${ConsoleColors.RED} ERROR : Can't add module ${
-					ConsoleColors.YELLOW
-				}${newModule.getId()}${
+			TCS.error(
+				`Can't add module ${ConsoleColors.YELLOW}${newModule.getId()}${
 					ConsoleColors.RED
 				} because a module with the same id already exists !`,
 			);

@@ -28,13 +28,67 @@ class TcsLanguageManager {
 	get(key: string): String {
 		//@ts-ignore
 		if (!this.lang[key]) {
-			TCS.debug(
-				`${ConsoleColors.RED}${key} is not defined for config ${TCS_CONFIG.lang}.`,
-			);
+			TCS.error(`${key} is not defined for config ${TCS_CONFIG.lang}.`);
 		}
 
 		//@ts-ignore
 		return this.lang[key] || '';
+	}
+
+	/**
+	 * Get the translation of the specified key and fill it with values
+	 * @param key Translation to find
+	 * @param replace Map of key and their values to find and replace in the translation
+	 * @returns Translation in the specified language in the configuration, filled with specified values
+	 */
+	getAndReplace(key: string, replace: Object): string {
+		//@ts-ignore
+		if (!this.lang[key]) {
+			TCS.error(`${key} is not defined for config ${TCS_CONFIG.lang}.`);
+		}
+
+		//@ts-ignore
+		let result = this.lang[key] || '';
+
+		for (let objKey in replace) {
+			//@ts-ignore
+			const replaceTo = replace[objKey];
+			result = result.replace(`{${objKey}}`, replaceTo);
+		}
+
+		return result;
+	}
+
+	/**
+	 * Get the translations of the specified module and add it to the dictionnary
+	 * @param module Module informations to load the lang config from
+	 * @param language Name of the current language to load
+	 */
+	loadModuleLang(module: TcsModule, language: String = 'en-EN') {
+		const id = module.getId();
+
+		const dict = JSON.parse(
+			LoadResourceFile(
+				GetCurrentResourceName(),
+				`src/assets/lang/${id}/${language}.json`,
+			),
+		);
+
+		if (!dict) {
+			if (language !== 'en-EN') {
+				TCS.warning(
+					`${language} language file doesn't exist for module ${id}. Trying to load language 'en-EN'...`,
+				);
+				this.loadModuleLang(module);
+			} else {
+				TCS.warning(
+					`${language} language file doesn't exist for module ${id}.`,
+				);
+			}
+			return;
+		}
+
+		this.addConfig(dict);
 	}
 
 	/**

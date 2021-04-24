@@ -285,7 +285,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:76</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:74</a></div>
                             </td>
                         </tr>
 
@@ -490,8 +490,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:83</a></div>
                 </td>
             </tr>
 
@@ -584,8 +584,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="134"
-                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:134</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:132</a></div>
                 </td>
             </tr>
 
@@ -709,8 +709,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="117"
-                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:117</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:115</a></div>
                 </td>
             </tr>
 
@@ -787,8 +787,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/core/librairies/threads/mixed_threads.ts:100</a></div>
                 </td>
             </tr>
 
@@ -880,8 +880,8 @@
 					if (TCS_CONFIG.debugMode) this.debugExec(thread);
 					else thread.exec();
 				} catch (e) {
-					TCS.debug(
-						&#x60;${ConsoleColors.YELLOW} [${thread.id}] ${ConsoleColors.RED}Error encountered in thread : \n${e}&#x60;,
+					TCS.error(
+						&#x60;Error encountered in thread ${ConsoleColors.YELLOW}${thread.id}${ConsoleColors.RED}: \n${e}&#x60;,
 					);
 				}
 			});
@@ -909,10 +909,8 @@
 		const time &#x3D; benchmark.stop();
 
 		if (time &gt;&#x3D; 1) {
-			TCS.debug(
-				&#x60;${ConsoleColors.YELLOW}[${thread.id.split(&#x27;-&#x27;)[1]}] WARNING : ${
-					ConsoleColors.RED
-				}Took ${time} ms to execute !&#x60;,
+			TCS.warning(
+				&#x60;Thread ${thread.id.split(&#x27;-&#x27;)[1]} took ${time} ms to execute !&#x60;,
 			);
 		}
 	};

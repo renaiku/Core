@@ -116,6 +116,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkVersion">checkVersion</a>
+                            </li>
+                            <li>
                                 <a href="#destroyModule">destroyModule</a>
                             </li>
                             <li>
@@ -126,6 +130,10 @@
                             </li>
                             <li>
                                 <a href="#initModule">initModule</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isVersionSuperior">isVersionSuperior</a>
                             </li>
                             <li>
                                 <a href="#printDebug">printDebug</a>
@@ -369,6 +377,49 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="checkVersion"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            checkVersion
+                        </b>
+                        <a href="#checkVersion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkVersion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check with github the last version of the module to know if the current module is up to date.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="destroyModule"></a>
                     <span class="name">
                         <b>
@@ -387,8 +438,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:71</a></div>
                 </td>
             </tr>
 
@@ -428,8 +479,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:56</a></div>
                 </td>
             </tr>
 
@@ -475,8 +526,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:48</a></div>
                 </td>
             </tr>
 
@@ -522,8 +573,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:95</a></div>
                 </td>
             </tr>
 
@@ -535,6 +586,126 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isVersionSuperior"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            isVersionSuperior
+                        </b>
+                        <a href="#isVersionSuperior"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isVersionSuperior(current: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>, compare: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>, currentStep: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check if the current version is superior at the compared one</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>current</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Latest version number of the module</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>compare</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Version to compare to</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>currentStep</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Step on the string version of the module (splitted by dot)</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Returns true if the current version is superior to the compared version. Returns false if not.</p>
 
                     </div>
                 </td>
@@ -563,8 +734,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="109"
-                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:109</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:181</a></div>
                 </td>
             </tr>
 
@@ -662,8 +833,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/core/librairies/modules/mixed_module.ts:64</a></div>
                 </td>
             </tr>
 
@@ -748,6 +919,14 @@
 
 		if (moduleInfos !&#x3D; null) {
 			this.moduleInfos &#x3D; moduleInfos;
+
+			if (
+				TCS_CONFIG.versionningCheck &amp;&amp;
+				TCS.isServerSided &amp;&amp;
+				this.moduleInfos.git
+			) {
+				this.checkVersion();
+			}
 		} else {
 			this.shouldLaunch &#x3D; false;
 		}
@@ -821,6 +1000,70 @@
 			);
 			console.log(ConsoleColors.RED, e, ConsoleColors.RESET);
 			this.shouldLaunch &#x3D; false;
+		}
+	}
+
+	/**
+	 * Check with github the last version of the module to know if the current module is up to date.
+	 */
+	private checkVersion() {
+		const https &#x3D; require(&#x27;https&#x27;);
+		const options &#x3D; {
+			hostname: &#x27;raw.githubusercontent.com&#x27;,
+			port: 443,
+			path: &#x60;/${this.moduleInfos.git}/main/.tcs.json&#x60;,
+			method: &#x27;GET&#x27;,
+		};
+
+		const req &#x3D; https.request(options, (res: any) &#x3D;&gt; {
+			res.on(&#x27;data&#x27;, (d: any) &#x3D;&gt; {
+				const buf &#x3D; Buffer.from(d);
+				const json &#x3D; JSON.parse(buf.toString(&#x27;utf-8&#x27;));
+
+				if (!json.version) {
+					return;
+				}
+				if (this.isVersionSuperior(json.version, this.moduleInfos.version)) {
+					TCS.warning(
+						&#x60;Module ${this.getId()} has a new version (current: ${
+							this.moduleInfos.version
+						} | new version : ${json.version}) ! \n${
+							ConsoleColors.YELLOW
+						}You can download it at : ${this.moduleInfos.git}${
+							ConsoleColors.RESET
+						}&#x60;,
+					);
+				}
+			});
+		});
+
+		req.on(&#x27;error&#x27;, (error: any) &#x3D;&gt; {
+			console.error(error);
+		});
+
+		req.end();
+	}
+
+	/**
+	 * Check if the current version is superior at the compared one
+	 * @param current Latest version number of the module
+	 * @param compare Version to compare to
+	 * @param currentStep Step on the string version of the module (splitted by dot)
+	 * @returns Returns true if the current version is superior to the compared version. Returns false if not.
+	 */
+	private isVersionSuperior(
+		current: String,
+		compare: String,
+		currentStep: number &#x3D; 0,
+	): boolean {
+		const currentNumber &#x3D; parseInt(current.split(&#x27;.&#x27;)[currentStep]);
+		const compareNumber &#x3D; parseInt(compare.split(&#x27;.&#x27;)[currentStep]);
+
+		if (currentNumber &#x3D;&#x3D; compareNumber) {
+			if (currentStep &#x3D;&#x3D; 2) return false;
+			return this.isVersionSuperior(current, compare, currentStep + 1);
+		} else {
+			return currentNumber &gt; compareNumber;
 		}
 	}
 

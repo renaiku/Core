@@ -25,6 +25,14 @@ class TcsModule {
 
 		if (moduleInfos != null) {
 			this.moduleInfos = moduleInfos;
+
+			if (
+				TCS_CONFIG.versionningCheck &&
+				TCS.isServerSided &&
+				this.moduleInfos.git
+			) {
+				this.checkVersion();
+			}
 		} else {
 			this.shouldLaunch = false;
 		}
@@ -98,6 +106,70 @@ class TcsModule {
 			);
 			console.log(ConsoleColors.RED, e, ConsoleColors.RESET);
 			this.shouldLaunch = false;
+		}
+	}
+
+	/**
+	 * Check with github the last version of the module to know if the current module is up to date.
+	 */
+	private checkVersion() {
+		const https = require('https');
+		const options = {
+			hostname: 'raw.githubusercontent.com',
+			port: 443,
+			path: `/${this.moduleInfos.git}/main/.tcs.json`,
+			method: 'GET',
+		};
+
+		const req = https.request(options, (res: any) => {
+			res.on('data', (d: any) => {
+				const buf = Buffer.from(d);
+				const json = JSON.parse(buf.toString('utf-8'));
+
+				if (!json.version) {
+					return;
+				}
+				if (this.isVersionSuperior(json.version, this.moduleInfos.version)) {
+					TCS.warning(
+						`Module ${this.getId()} has a new version (current: ${
+							this.moduleInfos.version
+						} | new version : ${json.version}) ! \n${
+							ConsoleColors.YELLOW
+						}You can download it at : ${this.moduleInfos.git}${
+							ConsoleColors.RESET
+						}`,
+					);
+				}
+			});
+		});
+
+		req.on('error', (error: any) => {
+			console.error(error);
+		});
+
+		req.end();
+	}
+
+	/**
+	 * Check if the current version is superior at the compared one
+	 * @param current Latest version number of the module
+	 * @param compare Version to compare to
+	 * @param currentStep Step on the string version of the module (splitted by dot)
+	 * @returns Returns true if the current version is superior to the compared version. Returns false if not.
+	 */
+	private isVersionSuperior(
+		current: String,
+		compare: String,
+		currentStep: number = 0,
+	): boolean {
+		const currentNumber = parseInt(current.split('.')[currentStep]);
+		const compareNumber = parseInt(compare.split('.')[currentStep]);
+
+		if (currentNumber == compareNumber) {
+			if (currentStep == 2) return false;
+			return this.isVersionSuperior(current, compare, currentStep + 1);
+		} else {
+			return currentNumber > compareNumber;
 		}
 	}
 

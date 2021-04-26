@@ -1,5 +1,7 @@
 # TCS Core
 
+![core](https://user-images.githubusercontent.com/61824574/116143458-77a0af00-a6db-11eb-816a-a155298f8dd1.jpg)
+
 ![version](https://img.shields.io/github/package-json/v/FiveMTCS/Core/master?style=flat-square) ![license](https://img.shields.io/github/license/FiveMTCS/Core?style=flat-square) ![issues](https://img.shields.io/github/issues/FiveMTCS/Core?style=flat-square) ![contributors](https://img.shields.io/github/contributors/FiveMTCS/Core) ![commit](https://img.shields.io/github/last-commit/FiveMTCS/Core)
 
 ## Presentation

@@ -47,7 +47,7 @@
 <p>TCS is using <a href="https://prettier.io/">Prettier</a> to format the code. You must use our format style in your push requests.</p>
 <h2 id="compiling">Compiling</h2>
 <p>You must compile your TS file with these actions before sending a pull request. The build will appear in the build folder.</p>
-<div><pre class="line-numbers"><code class="language-none">npm start</code></pre></div><h2 id="render-the-documentation">Render the documentation</h2>
+<div><pre class="line-numbers"><code class="language-none">npm run precompile</code></pre></div><h2 id="render-the-documentation">Render the documentation</h2>
 <p>TCS uses <a href="https://compodoc.app/">compodoc</a> to render the documentation automatically. If you need to update the documentation due to code changes, please follow these steps :</p>
 <div><pre class="line-numbers"><code class="language-none">npm install -g &#64;compodoc/compodoc
 
@@ -59,6 +59,8 @@ npm run doc</code></pre></div><h3 id="dependencies">Dependencies</h3>
 <li>prettier</li>
 <li>tslint</li>
 <li>typescript</li>
+<li>fs-extra</li>
+<li>merge-files</li>
 </ul>
 <p>Execute the following command to install them :</p>
 <div><pre class="line-numbers"><code class="language-none">npm i</code></pre></div>

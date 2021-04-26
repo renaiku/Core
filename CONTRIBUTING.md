@@ -19,7 +19,7 @@ TCS is using [Prettier](https://prettier.io/) to format the code. You must use o
 You must compile your TS file with these actions before sending a pull request. The build will appear in the build folder.
 
 ```
-npm start
+npm run precompile
 ```
 
 ## Render the documentation
@@ -41,6 +41,8 @@ The current project depends on :
 - prettier
 - tslint
 - typescript
+- fs-extra
+- merge-files
 
 Execute the following command to install them :
 

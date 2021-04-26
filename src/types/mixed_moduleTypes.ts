@@ -1,6 +1,6 @@
 /**
  * @author Maxence Leguede
- * @version 0.1.0
+ * @version 1.1.0
  * @since 0.1.0
  */
 
@@ -10,4 +10,5 @@ enum TcsModuleTypes {
 	UI = 'ui',
 	SYSTEM = 'system',
 	EVENT = 'event',
+	CORE = 'core'
 }

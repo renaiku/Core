@@ -22,29 +22,29 @@ function vehicleThreadChecker(module: TcsModule) {
 					data: {
 						vehicleId: vehicleId,
 						vehicleModel: vehicleModel,
-					}
-				}
+					},
+				};
 				TCS.eventManager.sendEvent(enterVehicleEvent);
 			}
 		} else {
-            if(isInVehicle) {
-                if(!IsPedInAnyVehicle(player, false)) {
-                    isInVehicle = false;
+			if (isInVehicle) {
+				if (!IsPedInAnyVehicle(player, false)) {
+					isInVehicle = false;
 
-                    const vehicleId = GetVehiclePedIsIn(player, false);
-                    const vehicleModel = GetEntityModel(vehicleId);
-    
-                    const leaveVehicleEvent: TcsEvent = {
-                        eventType: TcsEventsList.PLAYER_LEAVE_VEHICLE,
-                        target: TcsEventTarget.LOCAL,
-                        data: {
-                            vehicleId: vehicleId,
-                            vehicleModel: vehicleModel,
-                        }
-                    }
-                    TCS.eventManager.sendEvent(leaveVehicleEvent);
-                }
-            }
+					const vehicleId = GetVehiclePedIsIn(player, false);
+					const vehicleModel = GetEntityModel(vehicleId);
+
+					const leaveVehicleEvent: TcsEvent = {
+						eventType: TcsEventsList.PLAYER_LEAVE_VEHICLE,
+						target: TcsEventTarget.LOCAL,
+						data: {
+							vehicleId: vehicleId,
+							vehicleModel: vehicleModel,
+						},
+					};
+					TCS.eventManager.sendEvent(leaveVehicleEvent);
+				}
+			}
 		}
 	});
 }

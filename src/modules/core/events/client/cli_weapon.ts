@@ -20,7 +20,7 @@ function weaponThreadChecker(module: TcsModule) {
 						eventType: TcsEventsList.PLAYER_GET_WEAPON,
 						target: TcsEventTarget.LOCAL,
 						data: {
-                            name: item,
+							name: item,
 							hash: WeaponList[item],
 						},
 					};
@@ -28,14 +28,14 @@ function weaponThreadChecker(module: TcsModule) {
 				}
 			} else {
 				if (isInArray) {
-                    const index = pWeapons.indexOf(WeaponList[item]);
+					const index = pWeapons.indexOf(WeaponList[item]);
 					if (index > -1) {
 						pWeapons.splice(index);
 						const looseWeaponEvent: TcsEvent = {
 							eventType: TcsEventsList.PLAYER_LOOSE_WEAPON,
 							target: TcsEventTarget.LOCAL,
 							data: {
-                                name: item,
+								name: item,
 								hash: WeaponList[item],
 							},
 						};

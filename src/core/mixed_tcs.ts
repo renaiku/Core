@@ -9,6 +9,8 @@ class TcsCore {
 	readonly modules: TcsModuleManager;
 	readonly lang: TcsLanguageManager;
 	readonly threads: TcsThreadsManager;
+	readonly inputs: TcsInputManager;
+	readonly callbacks: TcsCallbackManager;
 	readonly isServerSided: boolean;
 
 	/**
@@ -22,6 +24,8 @@ class TcsCore {
 		this.modules = new TcsModuleManager();
 		this.lang = new TcsLanguageManager();
 		this.threads = new TcsThreadsManager();
+		this.inputs = new TcsInputManager();
+		this.callbacks = new TcsCallbackManager();
 
 		try {
 			//@ts-ignore

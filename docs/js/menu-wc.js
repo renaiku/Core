@@ -58,6 +58,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/TcsBenchmark.html" data-type="entity-link">TcsBenchmark</a>
                             </li>
                             <li class="link">
+                                <a href="classes/TcsCallbackManager.html" data-type="entity-link">TcsCallbackManager</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/TcsCore.html" data-type="entity-link">TcsCore</a>
                             </li>
                             <li class="link">
@@ -65,6 +68,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/TcsEventManager.html" data-type="entity-link">TcsEventManager</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/TcsInputManager.html" data-type="entity-link">TcsInputManager</a>
                             </li>
                             <li class="link">
                                 <a href="classes/TcsLanguageManager.html" data-type="entity-link">TcsLanguageManager</a>
@@ -92,10 +98,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/ActionInput.html" data-type="entity-link">ActionInput</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/TcsClientEvent.html" data-type="entity-link">TcsClientEvent</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/TcsEvent.html" data-type="entity-link">TcsEvent</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/TcsInput.html" data-type="entity-link">TcsInput</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/TcsModuleInfos.html" data-type="entity-link">TcsModuleInfos</a>

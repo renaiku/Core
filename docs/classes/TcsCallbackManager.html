@@ -86,18 +86,18 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Private</span>
                                 <a href="#ClientCallBack">ClientCallBack</a>
                             </li>
                             <li>
                                 <a href="#RegisterServerCallback">RegisterServerCallback</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Private</span>
                                 <a href="#requestId">requestId</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Private</span>
                                 <a href="#ServerCallBack">ServerCallBack</a>
                             </li>
                             <li>
@@ -153,7 +153,7 @@
                         <a name="ClientCallBack"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
+                                <span class="modifier">Private</span>
                             ClientCallBack</b>
                             <a href="#ClientCallBack"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -244,7 +244,7 @@
                         <a name="requestId"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
+                                <span class="modifier">Private</span>
                             requestId</b>
                             <a href="#requestId"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -277,7 +277,7 @@
                         <a name="ServerCallBack"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
+                                <span class="modifier">Private</span>
                             ServerCallBack</b>
                             <a href="#ServerCallBack"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -381,9 +381,9 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">class TcsCallbackManager {
-	public ClientCallBack: any[];
-	public ServerCallBack: any[];
-	public requestId &#x3D; 0;
+	private ClientCallBack: any[];
+	private ServerCallBack: any[];
+	private requestId &#x3D; 0;
 
 	/**
 	 * Initialize the callbacks manager

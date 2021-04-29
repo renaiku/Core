@@ -13,8 +13,11 @@
 		"gta"
 	],
 	"author": "Maxence Leguede",
-	"license": "ISC",
-	"dependencies": {},
+	"license": "MIT",
+	"dependencies": {
+		"mongodb": "^3.6.6",
+		"mysql2": "^2.2.5"
+	},
 	"devDependencies": {
 		"@citizenfx/client": "^2.0.3825-1",
 		"@citizenfx/server": "^2.0.3825-1",

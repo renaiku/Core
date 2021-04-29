@@ -42,6 +42,8 @@
 <blockquote>
 <p><strong>For any question about the core, you can directly ask it into the &quot;discution&quot; section of this repository</strong></p>
 </blockquote>
+<h2 id="basic-modules">Basic modules</h2>
+<p>You can learn more about the basic modules (such as the database management) <a href="https://github.com/FiveMTCS/Core/blob/main/BASE_MODULES.md">here</a>.</p>
 <h2 id="git-sources">Git sources</h2>
 <p>To download the latest sources of TCS, execute this command :</p>
 <p><code>git clone https://github.com/FiveMTCS/Core.git</code></p>
@@ -50,27 +52,33 @@
 <h2 id="get-started">Get started</h2>
 <p>It is very simple to use TCS :</p>
 <ul>
-<li>Download the latest release <a href="https://github.com/FiveMTCS/Core/releases">here</a></li>
-<li>Drag and drop the folder to your FiveM server resources folder</li>
-<li>Add the next command to your server.cfg</li>
+<li><p>Download the latest release <a href="https://github.com/FiveMTCS/Core/releases">here</a></p>
+</li>
+<li><p>Drag and drop the folder to your FiveM server resources folder</p>
+</li>
+<li><p>Add the next command to your server.cfg</p>
+</li>
 </ul>
-<div><pre class="line-numbers"><code class="language-none">ensure tcs</code></pre></div><h2 id="developer-tools">Developer tools</h2>
+<div><pre class="line-numbers"><code class="language-none">
+ensure tcs
+</code></pre></div><h2 id="developer-tools">Developer tools</h2>
 <p>To develop a new TCS module, follow these steps :</p>
 <ul>
 <li><p>Create a folder that will contain the sources of your module</p>
 </li>
 <li><p>Execute these commands :</p>
-<p>npm init
-npm i -D @citizenfx/client
-npm i -D @citizenfx/server
-npm i -D @fivemtcs/types</p>
 </li>
-<li><p>Export the sources and place them into the <code>modules/</code> folder inside the TCS Core resource.</p>
+</ul>
+<p>npm init</p>
+<p>npm i -D @citizenfx/client</p>
+<p>npm i -D @citizenfx/server</p>
+<p>npm i -D @fivemtcs/types</p>
+<ul>
+<li>Export the sources and place them into the <code>modules/</code> folder inside the TCS Core resource.</li>
+</ul>
 <blockquote>
 <p>You can find more informations by looking at the <strong><a href="https://github.com/FiveMTCS/DemoModule">Demo project</a></strong></p>
 </blockquote>
-</li>
-</ul>
 
 
 

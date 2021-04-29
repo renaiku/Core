@@ -11,6 +11,7 @@ class TcsCore {
 	readonly threads: TcsThreadsManager;
 	readonly inputs: TcsInputManager;
 	readonly callbacks: TcsCallbackManager;
+	readonly database: TcsDatabaseManager | null = null;
 	readonly isServerSided: boolean;
 
 	/**
@@ -30,6 +31,10 @@ class TcsCore {
 		try {
 			//@ts-ignore
 			this.isServerSided = ScheduleResourceTick != undefined;
+
+			if (this.isServerSided) {
+				this.database = new TcsDatabaseManager();
+			}
 		} catch (error) {
 			this.isServerSided = false;
 		}

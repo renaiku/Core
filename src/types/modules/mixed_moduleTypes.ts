@@ -10,5 +10,7 @@ enum TcsModuleTypes {
 	UI = 'ui',
 	SYSTEM = 'system',
 	EVENT = 'event',
-	CORE = 'core'
+	CORE = 'core',
 }
+
+exports('TcsModuleTypes', () => TcsModuleTypes);

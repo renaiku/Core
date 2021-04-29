@@ -19,3 +19,5 @@ interface TcsEvent {
 interface TcsClientEvent extends TcsEvent {
 	targetId: Number;
 }
+
+exports('TcsEventTarget', () => TcsEventTarget);

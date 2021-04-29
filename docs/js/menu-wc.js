@@ -44,6 +44,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-paper"></span>LICENSE
                             </a>
                         </li>
+                                <li class="link">
+                                    <a href="dependencies.html" data-type="chapter-link">
+                                        <span class="icon ion-ios-list"></span>Dependencies
+                                    </a>
+                                </li>
                     </ul>
                 </li>
                     <li class="chapter">
@@ -55,6 +60,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
+                                <a href="classes/MakeRequest.html" data-type="entity-link">MakeRequest</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/MakeRequestMongo.html" data-type="entity-link">MakeRequestMongo</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/MakeRequestSQL.html" data-type="entity-link">MakeRequestSQL</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/MongoDatabase.html" data-type="entity-link">MongoDatabase</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/MysqlDatabase.html" data-type="entity-link">MysqlDatabase</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/TcsBenchmark.html" data-type="entity-link">TcsBenchmark</a>
                             </li>
                             <li class="link">
@@ -62,6 +82,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/TcsCore.html" data-type="entity-link">TcsCore</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/TcsDatabaseManager.html" data-type="entity-link">TcsDatabaseManager</a>
                             </li>
                             <li class="link">
                                 <a href="classes/TcsEventListener.html" data-type="entity-link">TcsEventListener</a>
@@ -99,6 +122,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
                                 <a href="interfaces/ActionInput.html" data-type="entity-link">ActionInput</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/database.html" data-type="entity-link">database</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/sqlColumn.html" data-type="entity-link">sqlColumn</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/TcsClientEvent.html" data-type="entity-link">TcsClientEvent</a>

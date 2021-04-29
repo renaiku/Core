@@ -1,6 +1,7 @@
 /**
  * @author Maxence Leguede
- * @version 0.1.0
+ * @version 1.1.0
+ * @since 0.1.0
  * @since 2021
  */
 
@@ -51,3 +52,10 @@ exports('loadTcsModuleInfos', loadTcsModuleInfos);
 exports('getCore', () => {
 	return TCS;
 });
+
+exports(
+	'addExternalModuleToGame',
+	(moduleInfos: TcsModuleInfos | null, onInit: Function) => {
+		TCS.modules.addModuleToGame(new TcsModule(moduleInfos, onInit));
+	},
+);

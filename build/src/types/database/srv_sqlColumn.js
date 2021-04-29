@@ -1,0 +1,19 @@
+"use strict";
+var sqlTypes;
+(function (sqlTypes) {
+    // string data types
+    sqlTypes["CHAR"] = "CHAR(255)";
+    sqlTypes["VARCHAR"] = "VARCHAR(255)";
+    sqlTypes["TINYTEXT"] = "TINYTEXT(255)";
+    sqlTypes["TEXT"] = "TEXT(65535)";
+    sqlTypes["MEDIUMTEXT"] = "MEDIUMTEXT(16777215)";
+    sqlTypes["LONGTEXT"] = "LONGTEXT(4294967295)";
+    sqlTypes["BINARY"] = "BINARY(255)";
+    sqlTypes["VARBINARY"] = "VARBINARY(255)";
+    sqlTypes["INT"] = "INT";
+    sqlTypes["DECIMAL"] = "DECIMAL(10, 3)";
+    sqlTypes["DATE"] = "DATE";
+    sqlTypes["DATETIME"] = "DATETIME";
+    sqlTypes["TIMESTAMP"] = "TIMESTAMP ";
+})(sqlTypes || (sqlTypes = {}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3J2X3NxbENvbHVtbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy90eXBlcy9kYXRhYmFzZS9zcnZfc3FsQ29sdW1uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxJQUFLLFFBaUJKO0FBakJELFdBQUssUUFBUTtJQUNaLG9CQUFvQjtJQUNwQiw4QkFBa0IsQ0FBQTtJQUNsQixvQ0FBd0IsQ0FBQTtJQUN4QixzQ0FBMEIsQ0FBQTtJQUMxQixnQ0FBb0IsQ0FBQTtJQUNwQiwrQ0FBbUMsQ0FBQTtJQUNuQyw2Q0FBaUMsQ0FBQTtJQUNqQyxrQ0FBc0IsQ0FBQTtJQUN0Qix3Q0FBNEIsQ0FBQTtJQUU1Qix1QkFBVyxDQUFBO0lBQ1gsc0NBQTBCLENBQUE7SUFFMUIseUJBQWEsQ0FBQTtJQUNiLGlDQUFxQixDQUFBO0lBQ3JCLG9DQUF3QixDQUFBO0FBQ3pCLENBQUMsRUFqQkksUUFBUSxLQUFSLFFBQVEsUUFpQloifQ==

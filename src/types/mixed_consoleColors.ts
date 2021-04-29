@@ -11,3 +11,5 @@ enum ConsoleColors {
 	YELLOW = '^3',
 	BLUE = '^4',
 }
+
+exports('ConsoleColors', () => ConsoleColors);

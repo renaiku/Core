@@ -16,6 +16,12 @@ Don't forget to read the [Code of Conduct](https://github.com/FiveMTCS/Core/blob
 
 > **For any question about the core, you can directly ask it into the "discution" section of this repository**
 
+> **IMPORTANT** As TCS is a gametype, you need a resource that declares the map spawn points to be able to connect. Please download the [tcs_map resource](https://github.com/FiveMTCS/Map/releases)
+
+## Basic modules
+
+You can learn more about the basic modules (such as the database management) [here](https://github.com/FiveMTCS/Core/blob/main/BASE_MODULES.md).
+
 ## Git sources
 
 To download the latest sources of TCS, execute this command :
@@ -30,12 +36,19 @@ It is possible that you experience some issues while using TCS, especially with 
 
 It is very simple to use TCS :
 
+- Download the latest version of [tcs_map](https://github.com/FiveMTCS/Map/releases)
+
 - Download the latest release [here](https://github.com/FiveMTCS/Core/releases)
+
 - Drag and drop the folder to your FiveM server resources folder
+
 - Add the next command to your server.cfg
 
 ```
+
+ensure tcs_map
 ensure tcs
+
 ```
 
 ## Developer tools
@@ -43,12 +56,17 @@ ensure tcs
 To develop a new TCS module, follow these steps :
 
 - Create a folder that will contain the sources of your module
+
 - Execute these commands :
 
-  npm init
-  npm i -D @citizenfx/client
-  npm i -D @citizenfx/server
-  npm i -D @fivemtcs/types
+npm init
+
+npm i -D @citizenfx/client
+
+npm i -D @citizenfx/server
+
+npm i -D @fivemtcs/types
 
 - Export the sources and place them into the `modules/` folder inside the TCS Core resource.
-  > You can find more informations by looking at the **[Demo project](https://github.com/FiveMTCS/DemoModule)**
+
+> You can find more informations by looking at the **[Demo project](https://github.com/FiveMTCS/DemoModule)**

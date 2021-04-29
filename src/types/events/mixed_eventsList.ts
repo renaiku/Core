@@ -11,5 +11,7 @@ enum TcsEventsList {
 	PLAYER_ENTER_VEHICLE = 'player_enter_in_vehicle',
 	PLAYER_LEAVE_VEHICLE = 'player_leave_vehicle',
 	PLAYER_GET_WEAPON = 'player_get_weapon',
-	PLAYER_LOOSE_WEAPON = 'player_loose_weapon'
+	PLAYER_LOOSE_WEAPON = 'player_loose_weapon',
 }
+
+exports('TcsEventsList', () => TcsEventsList);

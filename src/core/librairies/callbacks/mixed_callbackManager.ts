@@ -5,9 +5,9 @@
  */
 
 class TcsCallbackManager {
-	public ClientCallBack: any[];
-	public ServerCallBack: any[];
-	public requestId = 0;
+	private ClientCallBack: any[];
+	private ServerCallBack: any[];
+	private requestId = 0;
 
 	/**
 	 * Initialize the callbacks manager

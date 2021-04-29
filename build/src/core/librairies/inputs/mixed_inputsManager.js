@@ -24,7 +24,14 @@ class TcsInputManager {
                     inputKeyboard: keyboardKey,
                     inputController: controllerKey,
                 });
-                RegisterKeyMapping(actionName, description, 'keyboard', keyboardKey);
+                RegisterKeyMapping(`+${actionName}`, description, 'keyboard', keyboardKey);
+                this.keyboardActions[actionName] = false;
+                RegisterCommand(`+${actionName}`, () => {
+                    this.keyboardActions[actionName] = true;
+                }, false);
+                RegisterCommand(`-${actionName}`, () => {
+                    this.keyboardActions[actionName] = false;
+                }, false);
             }
             else {
                 TCS.error(`actionName: ${actionName} already exist !`);
@@ -39,9 +46,8 @@ class TcsInputManager {
             const actionData = this.actionInputs.find((action) => action.actionName == actionName);
             if (!actionData)
                 return false;
-            if (!IsInputDisabled(2)) {
-                return IsControlJustPressed(0, actionData.inputController);
-            }
+            return (this.keyboardActions[actionName] ||
+                IsControlJustPressed(0, actionData.inputController));
         };
         /**
          * Returns whether a control is currently pressed, used only for Controllers
@@ -52,76 +58,11 @@ class TcsInputManager {
             const actionData = this.actionInputs.find((action) => action.actionName == actionName);
             if (!actionData)
                 return false;
-            if (!IsInputDisabled(2)) {
-                return IsControlJustPressed(0, actionData.inputController);
-            }
-            return false;
+            return (this.keyboardActions[actionName] ||
+                IsControlPressed(0, actionData.inputController));
         };
-        /**
-         * Recovery of player data from the database, in case the player is new, initialization of data
-         */
-        this.getPersonnalInputs = () => {
-            const concatInputs = Object.assign(Object.assign({}, TcsKeyboardInputs), TcsControllerInputs);
-            for (let key in concatInputs) {
-                const currInput = {
-                    inputName: key,
-                    //@ts-ignore
-                    inputKey: concatInputs[key],
-                };
-                this.personalInputs.push(currInput);
-            }
-        };
-        /**
-         * Change a key
-         * @param inputName key by default
-         * @param inputKey New input
-         * @returns boolean
-         */
-        this.setInput = (inputName, inputKey) => {
-            const inputAlreadyUsed = this.personalInputs.some((input) => input.inputKey == inputKey);
-            if (!inputAlreadyUsed) {
-                const currInput = this.personalInputs.find((input) => input.inputName == inputName);
-                if (!currInput)
-                    return false;
-                currInput.inputKey = inputKey;
-            }
-            else {
-                console.log(`${ConsoleColors.RED}[TcsInputManager] inputKey: ${inputKey} for inputName: ${inputName} already used !`);
-            }
-        };
-        /**
-         * reset all keys to default
-         * @param inputName
-         * @returns
-         *
-         * TO CHANGE
-         */
-        this.resetInputsDefault = () => {
-            this.personalInputs = [];
-            const concatInputs = Object.assign(Object.assign({}, TcsKeyboardInputs), TcsControllerInputs);
-            for (let key in concatInputs) {
-                const currInput = {
-                    inputName: key,
-                    //@ts-ignore
-                    inputKey: concatInputs[key],
-                };
-                this.personalInputs.push(currInput);
-            }
-        };
-        /**
-         * Recovery of the player's personalized input
-         * @param inputName name of the key
-         * @returns false or the key
-         */
-        this.getInput = (inputName) => {
-            const currInput = this.personalInputs.find((input) => input.inputName == inputName);
-            if (!currInput)
-                return false;
-            return currInput.inputKey;
-        };
-        this.personalInputs = [];
         this.actionInputs = [];
-        this.getPersonnalInputs();
+        this.keyboardActions = {};
     }
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWl4ZWRfaW5wdXRzTWFuYWdlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9jb3JlL2xpYnJhaXJpZXMvaW5wdXRzL21peGVkX2lucHV0c01hbmFnZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7O0dBSUc7QUFFSCxNQUFNLGVBQWU7SUFJcEI7O09BRUc7SUFDSDtRQU1BOzs7Ozs7V0FNRztRQUNILGVBQVUsR0FBRyxDQUNaLFVBQWtCLEVBQ2xCLFdBQW1CLEVBQ25CLFdBQW1CLEVBQ25CLGFBQXFCLEVBQ3BCLEVBQUU7WUFDSCxNQUFNLGNBQWMsR0FBRyxJQUFJLENBQUMsWUFBWSxDQUFDLElBQUksQ0FDNUMsQ0FBQyxNQUFNLEVBQUUsRUFBRSxDQUFDLE1BQU0sQ0FBQyxVQUFVLElBQUksVUFBVSxDQUMzQyxDQUFDO1lBQ0YsSUFBSSxDQUFDLGNBQWMsRUFBRTtnQkFDcEIsSUFBSSxDQUFDLFlBQVksQ0FBQyxJQUFJLENBQUM7b0JBQ3RCLFVBQVUsRUFBRSxVQUFVO29CQUN0QixhQUFhLEVBQUUsV0FBVztvQkFDMUIsZUFBZSxFQUFFLGFBQWE7aUJBQzlCLENBQUMsQ0FBQztnQkFDSCxrQkFBa0IsQ0FBQyxVQUFVLEVBQUUsV0FBVyxFQUFFLFVBQVUsRUFBRSxXQUFXLENBQUMsQ0FBQzthQUNyRTtpQkFBTTtnQkFDTixHQUFHLENBQUMsS0FBSyxDQUFDLGVBQWUsVUFBVSxrQkFBa0IsQ0FBQyxDQUFDO2FBQ3ZEO1FBQ0YsQ0FBQyxDQUFDO1FBRUY7Ozs7V0FJRztRQUNILGtCQUFhLEdBQUcsQ0FBQyxVQUFrQixFQUFFLEVBQUU7WUFDdEMsTUFBTSxVQUFVLEdBQUcsSUFBSSxDQUFDLFlBQVksQ0FBQyxJQUFJLENBQ3hDLENBQUMsTUFBTSxFQUFFLEVBQUUsQ0FBQyxNQUFNLENBQUMsVUFBVSxJQUFJLFVBQVUsQ0FDM0MsQ0FBQztZQUVGLElBQUksQ0FBQyxVQUFVO2dCQUFFLE9BQU8sS0FB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
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWl4ZWRfaW5wdXRzTWFuYWdlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9jb3JlL2xpYnJhaXJpZXMvaW5wdXRzL21peGVkX2lucHV0c01hbmFnZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7O0dBSUc7QUFFSCxNQUFNLGVBQWU7SUFJcEI7O09BRUc7SUFDSDtRQUtBOzs7Ozs7V0FNRztRQUNILGVBQVUsR0FBRyxDQUNaLFVBQWtCLEVBQ2xCLFdBQW1CLEVBQ25CLFdBQW1CLEVBQ25CLGFBQXFCLEVBQ3BCLEVBQUU7WUFDSCxNQUFNLGNBQWMsR0FBRyxJQUFJLENBQUMsWUFBWSxDQUFDLElBQUksQ0FDNUMsQ0FBQyxNQUFNLEVBQUUsRUFBRSxDQUFDLE1BQU0sQ0FBQyxVQUFVLElBQUksVUFBVSxDQUMzQyxDQUFDO1lBQ0YsSUFBSSxDQUFDLGNBQWMsRUFBRTtnQkFDcEIsSUFBSSxDQUFDLFlBQVksQ0FBQyxJQUFJLENBQUM7b0JBQ3RCLFVBQVUsRUFBRSxVQUFVO29CQUN0QixhQUFhLEVBQUUsV0FBVztvQkFDMUIsZUFBZSxFQUFFLGFBQWE7aUJBQzlCLENBQUMsQ0FBQztnQkFDSCxrQkFBa0IsQ0FDakIsSUFBSSxVQUFVLEVBQUUsRUFDaEIsV0FBVyxFQUNYLFVBQVUsRUFDVixXQUFXLENBQ1gsQ0FBQztnQkFFRixJQUFJLENBQUMsZUFBZSxDQUFDLFVBQVUsQ0FBQyxHQUFHLEtBQUssQ0FBQztnQkFDekMsZUFBZSxDQUNkLElBQUksVUFBVSxFQUFFLEVBQ2hCLEdBQUcsRUFBRTtvQkFDSixJQUFJLENBQUMsZUFBZSxDQUFDLFVBQVUsQ0FBQyxHQUFHLElBQUksQ0FBQztnQkFDekMsQ0FBQyxFQUNELEtBQUssQ0FDTCxDQUFDO2dCQUVGLGVBQWUsQ0FDZCxJQUFJLFVBQVUsRUFBRSxFQUNoQixHQUFHLEVBQUU7b0JBQ0osSUFBSSxDQUFDLGVBQWUsQ0FBQyxVQUFVLENBQUMsR0FBRyxLQUFLLENBQUM7Z0JBQzFDLENBQUMsRUFDRCxLQUFLLENBQ0wsQ0FBQzthQUNGO2lCQUFNO2dCQUNOLEdBQUcsQ0FBQyxLQUFLLENBQUMsZUFBZSxVQUFVLGtCQUFrQixDQUFDLENBQUM7YUFDdkQ7UUFDRixDQUFDLENBQUM7UUFFRjs7OztXQUlHO1FBQ0gsa0JBQWEsR0FBRyxDQUFDLFVBQWtCLEVBQUUsRUFBRTtZQUN0QyxNQUFNLFVBQVUsR0FBRyxJQUFJLENBQUMsWUFBWSxDQUFDLElBQUksQ0FDeEMsQ0FBQyxNQUFNLEVBQUUsRUFBRSxDQUFDLE1BQU0sQ0FBQyxVQUFVLElBQUksVUFBVSxDQUMzQyxDQUFDO1lBQ0YsSUFBSSxDQUFDLFVBQVU7Z0JBQUUsT0FBTyxLQUFLLENBQUM7WUFDOUIsT0FBTyxDQUNOLElBQUksQ0FBQyxlQUFlLENBQUMsVUFBVSxDQUFDO2dCQUNoQyxvQkFBb0IsQ0FBQyxDQUFDLEVBQUUsVUFBVSxDQUFDLGVBQWUsQ0FBQyxDQUNuRCxDQUFDO1FBQ0gsQ0FBQyxDQUFDO1FBRUY7Ozs7V0FJRztRQUNILGNBQVMsR0FBRyxDQUFDLFVBQWtCLEVBQUUsRUFBRTtZQUNsQyxNQUFNLFVBQVUsR0FBRyxJQUFJLENBQUMsWUFBWSxDQUFDLElBQUksQ0FDeEMsQ0FBQyxNQUFNLEVBQUUsRUFBRSxDQUFDLE1BQU0sQ0FBQyxVQUFVLElBQUksVUFBVSxDQUMzQyxDQUFDO1lBRUYsSUFBSSxDQUFDLFVBQVU7Z0JBQUUsT0FBTyxLQUFLLENBQUM7WUFFOUIsT0FBTyxDQUNOLElBQUksQ0FBQyxlQUFlLENBQUMsVUFBVSxDQUFDO2dCQUNoQyxnQkFBZ0IsQ0FBQyxDQUFDLEVBQUUsVUFBVSxDQUFDLGVBQWUsQ0FBQyxDQUMvQyxDQUFDO1FBQ0gsQ0FBQyxDQUFDO1FBdEZELElBQUksQ0FBQyxZQUFZLEdBQUcsRUFBRSxDQUFDO1FBQ3ZCLElBQUksQ0FBQyxlQUFlLEdBQUcsRUFBRSxDQUFDO0lBQzNCLENBQUM7Q0FxRkQifQ==

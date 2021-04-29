@@ -38,6 +38,7 @@ The current project depends on :
 
 - @citizenfx/client
 - @citizenfx/server
+- @types/node
 - prettier
 - tslint
 - typescript

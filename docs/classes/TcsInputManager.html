@@ -87,6 +87,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
+                                <a href="#actionHandlers">actionHandlers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#actionInputs">actionInputs</a>
                             </li>
                             <li>
@@ -101,6 +105,9 @@
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#keyboardActions">keyboardActions</a>
+                            </li>
+                            <li>
+                                <a href="#onActionJustPressed">onActionJustPressed</a>
                             </li>
                         </ul>
                     </td>
@@ -126,7 +133,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -145,6 +152,34 @@
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actionHandlers"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            actionHandlers</b>
+                            <a href="#actionHandlers"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Record&lt;string | Function[]&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -192,7 +227,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -269,7 +304,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:74</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:77</a></div>
                             </td>
                         </tr>
 
@@ -325,13 +360,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:90</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:93</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Returns whether a control is currently pressed, used only for Controllers</p>
+                        <div class="io-description"><p>Returns whether a control is currently pressed</p>
 </div>
                     </td>
                 </tr>
@@ -390,6 +425,69 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onActionJustPressed"></a>
+                        <span class="name">
+                            <b>
+                            onActionJustPressed</b>
+                            <a href="#onActionJustPressed"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/core/librairies/inputs/mixed_inputsManager.ts:68</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Adds a function to call when the action is executed</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>actionName</td>
+                                                        <td>
+                                                                <code><p>action&#39;s name</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>handler</td>
+                                                        <td>
+                                                                <code><p>function to call when the action is call</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
 </section>
 
 
@@ -405,6 +503,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">class TcsInputManager {
 	private actionInputs: Array&lt;ActionInput&gt;;
 	private keyboardActions: Record&lt;string, boolean&gt;;
+	private actionHandlers: Record&lt;string, Function[]&gt;;
 
 	/**
 	 * Initialize the inputs manager
@@ -412,6 +511,7 @@
 	constructor() {
 		this.actionInputs &#x3D; [];
 		this.keyboardActions &#x3D; {};
+		this.actionHandlers &#x3D; {};
 	}
 
 	/**
@@ -443,25 +543,26 @@
 				keyboardKey,
 			);
 
-			this.keyboardActions[actionName] &#x3D; false;
+			this.actionHandlers[actionName] &#x3D; [];
 			RegisterCommand(
 				&#x60;+${actionName}&#x60;,
 				() &#x3D;&gt; {
-					this.keyboardActions[actionName] &#x3D; true;
-				},
-				false,
-			);
-
-			RegisterCommand(
-				&#x60;-${actionName}&#x60;,
-				() &#x3D;&gt; {
-					this.keyboardActions[actionName] &#x3D; false;
+					this.actionHandlers[actionName].forEach((fnc) &#x3D;&gt; fnc());
 				},
 				false,
 			);
 		} else {
 			TCS.error(&#x60;actionName: ${actionName} already exist !&#x60;);
 		}
+	};
+
+	/**
+	 * Adds a function to call when the action is executed
+	 * @param actionName action&#x27;s name
+	 * @param handler function to call when the action is call
+	 */
+	onActionJustPressed &#x3D; (actionName: string, handler: Function) &#x3D;&gt; {
+		this.actionHandlers[actionName].push(handler);
 	};
 
 	/**
@@ -481,7 +582,7 @@
 	};
 
 	/**
-	 * Returns whether a control is currently pressed, used only for Controllers
+	 * Returns whether a control is currently pressed
 	 * @param actionName action&#x27;s name
 	 * @returns boolean
 	 */

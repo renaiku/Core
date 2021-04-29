@@ -4,9 +4,10 @@
  * @since 1.1.0
  */
 
-class TcsInputManager {
+ class TcsInputManager {
 	private actionInputs: Array<ActionInput>;
 	private keyboardActions: Record<string, boolean>;
+	private actionHandlers: Record<string, Function[]>;
 
 	/**
 	 * Initialize the inputs manager
@@ -14,6 +15,7 @@ class TcsInputManager {
 	constructor() {
 		this.actionInputs = [];
 		this.keyboardActions = {};
+		this.actionHandlers = {};
 	}
 
 	/**
@@ -45,25 +47,26 @@ class TcsInputManager {
 				keyboardKey,
 			);
 
-			this.keyboardActions[actionName] = false;
+			this.actionHandlers[actionName] = [];
 			RegisterCommand(
 				`+${actionName}`,
 				() => {
-					this.keyboardActions[actionName] = true;
-				},
-				false,
-			);
-
-			RegisterCommand(
-				`-${actionName}`,
-				() => {
-					this.keyboardActions[actionName] = false;
+					this.actionHandlers[actionName].forEach((fnc) => fnc());
 				},
 				false,
 			);
 		} else {
 			TCS.error(`actionName: ${actionName} already exist !`);
 		}
+	};
+
+	/**
+	 * Adds a function to call when the action is executed
+	 * @param actionName action's name
+	 * @param handler function to call when the action is call
+	 */
+	onActionJustPressed = (actionName: string, handler: Function) => {
+		this.actionHandlers[actionName].push(handler);
 	};
 
 	/**
@@ -83,7 +86,7 @@ class TcsInputManager {
 	};
 
 	/**
-	 * Returns whether a control is currently pressed, used only for Controllers
+	 * Returns whether a control is currently pressed
 	 * @param actionName action's name
 	 * @returns boolean
 	 */
